@@ -1,5 +1,5 @@
 
-const url = 'localhost';
+const url = '/api';
 
 function on() {
     sendRequest("on", "true");
@@ -37,7 +37,7 @@ splitter=element.split("#")[1];
 
 function sendRequest(param, value) {
     http = new XMLHttpRequest();
-    http.open("GET", url + "?" + param + "=" + value);
+    http.open("POST", url + "?" + param + "=" + value);
     http.send();
 }
 
