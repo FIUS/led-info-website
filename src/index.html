@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+
+    <div>
+        <h1>led-info</h1>
+    </div>
+    <div class="boxes">
+        <h4>Status</h4>
+        </br>
+        <input type="button" value="Off" onclick="on()" /> <input type="button" value="On" onclick="off()" />
+    </div>
+    <div class="boxes">
+        <h4>Anzeigetext</h4>
+        </br>
+        <input type="text" placeholder="Text to display" id="textInput" />
+        </br>
+        <input type="button" class="subButton" value="Apply" onclick="text()" />
+    </div>
+
+    <div class="boxes">
+        <h4>Geschwindigkeit</h4>
+        </br>
+        <input max="400" min="1" type="range" id="speedInput" />
+        </br>
+        <input type="button" value="Apply" class="subButton" onclick="speed()" />
+    </div>
+    <div class="boxes">
+        <h4>Farbe</h4>
+        </br>
+        <input type="color" id="colorInput" />
+        </br>
+        <input type="button" class="subButton" value="Apply" onclick="color()" />
+    </div>
+
+    <script src="buttons.js"></script>
+</body>
+
+</html>

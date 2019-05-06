@@ -1,0 +1,19 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h4{
+    margin: 0px;
+    color: white;
+}
+
+.boxes{
+    height: 125px;
+    background-color: maroon;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.subButton{
+    margin-top: 15px;
+}
