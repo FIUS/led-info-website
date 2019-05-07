@@ -1,5 +1,5 @@
 
-const url = '/api';
+const url = document.URL+'/api';
 
 function on() {
     sendRequest("on", "true");
