@@ -1,12 +1,24 @@
 
 const url = document.URL+'/api';
 
+var setColor = function( rgb ){
+    var r = Number(rgb.substring(4,rgb.length-1).split(",")[0])
+    var g = Number(rgb.substring(4,rgb.length-1).split(",")[1])
+    var b = Number(rgb.substring(4,rgb.length-1).split(",")[2])
+    var hex = "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+    document.getElementById("colorInput").value=hex;
+}
+
 function on() {
     sendRequest("on", "true");
+    document.getElementById("on").disabled=true;
+    document.getElementById("off").disabled=false;
 }
 
 function off() {
     sendRequest("on", "false");
+    document.getElementById("off").disabled=true;
+    document.getElementById("on").disabled=false;
 }
 
 function text() {
@@ -33,6 +45,27 @@ splitter=element.split("#")[1];
     output = pad(rP,3) + pad(gP,3) + pad(bP,3);
 
     sendRequest("color",output);
+}
+
+window.onload = function(){
+    http = new XMLHttpRequest();
+    http.open("POST", url+"?get");
+    http.onreadystatechange = function () {
+        if (http.readyState === 4 && http.status === 200) {
+            var json = JSON.parse(http.responseText);
+            console.log(json);
+            document.getElementById("textInput").value=json.text;
+            document.getElementById("speedInput").value=json.speed;
+            setColor(json.color);
+            if(json.isActive === 1){
+                document.getElementById("on").disabled=true;
+            }
+            else{
+                document.getElementById("off").disabled=true;
+            }
+}
+    };
+    http.send();
 }
 
 function sendRequest(param, value) {
