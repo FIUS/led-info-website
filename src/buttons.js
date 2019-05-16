@@ -29,6 +29,14 @@ function speed() {
     sendRequest("speed", document.getElementById("speedInput").value);
 }
 
+function animation(){
+    sendRequest("animationType", document.getElementById("selector").value);
+}
+
+function emptyTicks(){
+    sendRequest("emptyTicks", document.getElementById("emptyTicks").value);
+}
+
 function color() {
     element = document.getElementById("colorInput").value;
 

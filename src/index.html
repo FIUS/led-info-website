@@ -37,7 +37,26 @@
         </br>
         <input type="button" class="subButton" value="Apply" onclick="color()" />
     </div>
+    <div class="boxes">
+        <h4>Animation</h4>
+        </br>
+        <select id="selector">
+            <option value="0">Normal</option>
+            <option value="1">Rainbow</option>
+          </select>
+        </br>
+        <input type="button" class="subButton" value="Apply" onclick="animation()" />
+    </div>
+    <div class="boxes">
+        <h4>Abstand zwischen Text</h4>
+        </br>
+        <input type="number" id="emptyTicks" min="1" max="50" value="40">
+        </br>
+        <input type="button" class="subButton" value="Apply" onclick="emptyTicks()" />
+    </div>
 
+
+    
     <script src="buttons.js"></script>
 </body>
 
