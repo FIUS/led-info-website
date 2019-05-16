@@ -25,3 +25,20 @@ h4{
     width: 100px;
     height: 50px;
 }
+
+@media only screen and (max-width:500px) {
+    .boxes{
+        height: auto;
+        width: 250px;
+        float: left;
+        font-size: 20pt;
+    }
+    input{
+        width: 200px;
+        height: 40px;
+    }
+    select{
+        width: 200px;
+        height: 40px;
+    }
+  }
