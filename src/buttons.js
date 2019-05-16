@@ -1,24 +1,24 @@
 
-const url = document.URL+'/api';
+const url = document.URL + '/api';
 
-var setColor = function( rgb ){
-    var r = Number(rgb.substring(4,rgb.length-1).split(",")[0])
-    var g = Number(rgb.substring(4,rgb.length-1).split(",")[1])
-    var b = Number(rgb.substring(4,rgb.length-1).split(",")[2])
+var setColor = function (rgb) {
+    var r = Number(rgb.substring(4, rgb.length - 1).split(",")[0])
+    var g = Number(rgb.substring(4, rgb.length - 1).split(",")[1])
+    var b = Number(rgb.substring(4, rgb.length - 1).split(",")[2])
     var hex = "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
-    document.getElementById("colorInput").value=hex;
+    document.getElementById("colorInput").value = hex;
 }
 
 function on() {
     sendRequest("on", "true");
-    document.getElementById("on").disabled=true;
-    document.getElementById("off").disabled=false;
+    document.getElementById("on").disabled = true;
+    document.getElementById("off").disabled = false;
 }
 
 function off() {
     sendRequest("on", "false");
-    document.getElementById("off").disabled=true;
-    document.getElementById("on").disabled=false;
+    document.getElementById("off").disabled = true;
+    document.getElementById("on").disabled = false;
 }
 
 function text() {
@@ -29,18 +29,18 @@ function speed() {
     sendRequest("speed", document.getElementById("speedInput").value);
 }
 
-function animation(){
+function animation() {
     sendRequest("animationType", document.getElementById("selector").value);
 }
 
-function emptyTicks(){
+function emptyTicks() {
     sendRequest("emptyTicks", document.getElementById("emptyTicks").value);
 }
 
 function color() {
     element = document.getElementById("colorInput").value;
 
-splitter=element.split("#")[1];
+    splitter = element.split("#")[1];
 
     r = splitter.substring(0, 2);
     g = splitter.substring(2, 4);
@@ -50,28 +50,29 @@ splitter=element.split("#")[1];
     gP = parseInt("0x" + g);
     bP = parseInt("0x" + b);
 
-    output = pad(rP,3) + pad(gP,3) + pad(bP,3);
+    output = pad(rP, 3) + pad(gP, 3) + pad(bP, 3);
 
-    sendRequest("color",output);
+    sendRequest("color", output);
 }
 
-window.onload = function(){
+window.onload = function () {
     http = new XMLHttpRequest();
-    http.open("POST", url+"?get");
+    http.open("POST", url + "?get");
     http.onreadystatechange = function () {
         if (http.readyState === 4 && http.status === 200) {
             var json = JSON.parse(http.responseText);
             console.log(json);
-            document.getElementById("textInput").value=json.text;
-            document.getElementById("speedInput").value=json.speed;
+            document.getElementById("textInput").value = json.text;
+            document.getElementById("speedInput").value = json.speed;
             setColor(json.color);
-            if(json.isActive === 1){
-                document.getElementById("on").disabled=true;
+            if (json.isActive === 1) {
+                document.getElementById("on").disabled = true;
             }
-            else{
-                document.getElementById("off").disabled=true;
+            else {
+                document.getElementById("off").disabled = true;
             }
-}
+            document.getElementById("emptyTicks").value = json.emptyTicks;
+        }
     };
     http.send();
 }
@@ -83,7 +84,7 @@ function sendRequest(param, value) {
 }
 
 function pad(num, size) {
-    var s = num+"";
+    var s = num + "";
     while (s.length < size) s = "0" + s;
     return s;
 }
