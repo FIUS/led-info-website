@@ -80,7 +80,15 @@ window.onload = function () {
 function sendRequest(param, value) {
     http = new XMLHttpRequest();
     http.open("POST", url + "?" + param + "=" + value);
+    http.onreadystatechange = function () {
+        if (http.readyState === 4 && http.status === 200) {
+            showToast("Successfully updated!");
+        } else if (http.readyState === 4) {
+            showToast("Request failed! (Code: "+http.status+")");
+        }
+    };
     http.send();
+
 }
 
 function pad(num, size) {
