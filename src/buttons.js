@@ -26,7 +26,7 @@ function text() {
 }
 
 function speed() {
-    sendRequest("speed", document.getElementById("speedInput").value);
+    sendRequest("speed", 55-document.getElementById("speedInput").value);
 }
 
 function animation() {
@@ -63,7 +63,8 @@ window.onload = function () {
             var json = JSON.parse(http.responseText);
             console.log(json);
             document.getElementById("textInput").value = json.text;
-            document.getElementById("speedInput").value = json.speed;
+            document.getElementById("speedInput").value = 55-json.speed;
+	    document.getElementById("selector").value  = json.animationType;
             setColor(json.color);
             if (json.isActive === 1) {
                 document.getElementById("on").disabled = true;
