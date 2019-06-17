@@ -547,7 +547,12 @@ SSLRandomSeed connect builtin
 </IfModule>
 
 
-<Location /api> 
+<Location /api/ceiling> 
   ProxyPass {{ .Env.LEDINFOURL }}
   ProxyPassReverse {{ .Env.LEDINFOURL }}
+</Location>
+
+<Location /api/sign> 
+  ProxyPass {{ .Env.LEDCEILINGURL }}
+  ProxyPassReverse {{ .Env.LEDCEILINGURL }}
 </Location>

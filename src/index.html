@@ -16,7 +16,7 @@
         <div class="boxes">
             <h4>Status</h4>
             </br>
-            <input type="button" value="Off" onclick="off()" id="off" /> <input type="button" value="On" onclick="on()"
+            <input type="button" value="Off" onclick="off('sign')" id="off" /> <input type="button" value="On" onclick="on('sign')"
                 id="on" />
         </div>
         <div class="boxes">
@@ -24,7 +24,7 @@
             </br>
             <input type="text" placeholder="Text to display" id="textInput" />
             </br>
-            <input type="button" class="subButton" value="Apply" onclick="text()" />
+            <input type="button" class="subButton" value="Apply" onclick="text('sign')" />
         </div>
 
         <div class="boxes">
@@ -32,14 +32,14 @@
             </br>
             <input max="40" min="15" type="range" id="speedInput" />
             </br>
-            <input type="button" value="Apply" class="subButton" onclick="speed()" />
+            <input type="button" value="Apply" class="subButton" onclick="speed('sign')" />
         </div>
         <div class="boxes">
             <h4>Farbe</h4>
             </br>
             <input type="color" id="colorInput" />
             </br>
-            <input type="button" class="subButton" value="Apply" onclick="color()" />
+            <input type="button" class="subButton" value="Apply" onclick="color('sign')" />
         </div>
         <div class="boxes">
             <h4>Animation</h4>
@@ -49,14 +49,14 @@
                 <option value="1">Rainbow</option>
             </select>
             </br>
-            <input type="button" class="subButton" value="Apply" onclick="animation()" />
+            <input type="button" class="subButton" value="Apply" onclick="animation('sign')" />
         </div>
         <div class="boxes">
             <h4>Abstand zwischen Text</h4>
             </br>
             <input type="number" id="emptyTicks" min="1" max="50" value="40">
             </br>
-            <input type="button" class="subButton" value="Apply" onclick="emptyTicks()" />
+            <input type="button" class="subButton" value="Apply" onclick="emptyTicks('sign')" />
         </div>
 
     </div>
@@ -71,7 +71,7 @@
                 </br>
                 <input type="color" id="colorInput" />
                 </br>
-                <input type="button" class="subButton" value="Apply" onclick="color()" />
+                <input type="button" class="subButton" value="Apply" onclick="color('ceiling')" />
             </div>
             <div class="boxes">
                 <h4>Animation</h4>
@@ -85,7 +85,7 @@
                     <option value="5">Christmas</option>
                 </select>
                 </br>
-                <input type="button" class="subButton" value="Apply" onclick="animation()" />
+                <input type="button" class="subButton" value="Apply" onclick="animation('ceiling')" />
             </div>
     
         </div>
