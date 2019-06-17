@@ -1,7 +1,7 @@
 
 const url = document.URL + '/api';
 const urlSign = url + "/sign";
-const urlCeiling = url + "/roof";
+const urlCeiling = url + "/ceiling";
 
 var setColor = function (rgb) {
     var r = Number(rgb.substring(4, rgb.length - 1).split(",")[0])
