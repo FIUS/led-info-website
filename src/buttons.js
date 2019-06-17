@@ -32,7 +32,7 @@ function speed(destination) {
 }
 
 function animation(destination) {
-    sendRequest("animationType", document.getElementById("selector").value,destination);
+    sendRequest("animationType", document.getElementById("selector"+destination).value,destination);
 }
 
 function emptyTicks(destination) {
