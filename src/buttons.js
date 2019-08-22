@@ -58,8 +58,9 @@ function color(destination) {
 }
 
 window.onload = function () {
+    //For the sign
     http = new XMLHttpRequest();
-    http.open("POST", url + "?get");
+    http.open("POST", url+urlSign + "?get");
     http.onreadystatechange = function () {
         if (http.readyState === 4 && http.status === 200) {
             var json = JSON.parse(http.responseText);
