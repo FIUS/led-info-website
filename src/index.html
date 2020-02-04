@@ -15,12 +15,13 @@
 <!-- Unchanged: background-color: #4fc400; -->
 
 <body>
+    <div class="topBox headline">LED-Schild Steuerung</div>
     <div class="outterBox">
         <div class="infoBox">
             <div class="topBox">Status</div>
-            <div class="bottomBox">
-                <a href="#" class="animated-button1"> On </a>
-                <button class="glow-on-hover"> Off </button>
+            <div id="onOffBox" class="bottomBox">
+                <button class="glow-on-hover centerObject"> On </button>
+                <button class="glow-on-hover centerObject"> Off </button>
             </div>
         </div>
     
@@ -61,7 +62,27 @@
             </div>
         </div>
     </div>
+
+    <!-- Decken steuerung -->
     
+    <div class="topBox headline">Decken Steuerung</div>
+    <div class="outterBox">
+        <div class="infoBox">
+            <div class="topBox">Status</div>
+            <div id="onOffBox" class="bottomBox">
+                <button class="glow-on-hover centerObject"> On </button>
+                <button class="glow-on-hover centerObject"> Off </button>
+            </div>
+        </div>
+    
+        <div class="infoBox">
+            <div class="topBox">Anzeigetext</div>
+            <div class="bottomBox">
+                <input type="text" placeholder="Type text..."/>
+            </div>
+        </div>
+    </div>
+
     <script src="toast.js"></script>
     <script src="buttons.js"></script>
 </body>
