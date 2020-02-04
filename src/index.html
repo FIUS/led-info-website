@@ -8,19 +8,23 @@
     <link rel="stylesheet" type="text/css" href="newStyle.css" />
     <link rel="stylesheet" type="text/css" href="button.css" />
     <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+    
 </head>
 
 <!-- Changed: background-color: #ffe300; -->
 <!-- Unchanged: background-color: #4fc400; -->
 
+<!-- Decken steuerung -->
+
 <body>
-    <div class="topBox headline">LED-Schild Steuerung</div>
+    <div id="signState" class="topBox headline">LED-Schild Steuerung</div>
     <div class="outterBox">
         <div class="infoBox">
             <div class="topBox">Status</div>
             <div id="onOffBox" class="bottomBox">
                 <button id="signOn" class="glow-on-hover centerObject"> On </button>
                 <button id="signOff" class="glow-on-hover centerObject"> Off </button>
+                <button id="signSend" class="glow-on-hover centerObject"> Send </button>
             </div>
         </div>
     
@@ -46,10 +50,11 @@
         </div>
 
         <div class="infoBox">
-            <div class="topBox">Animation</div>
+            <div class="topBox">Modus</div>
             <div class="bottomBox">
                 <select id="signAnimation">
-
+                    <option value="0">Normal</option>
+                    <option value="1">Rainbow</option>
                 </select>
             </div>
         </div>
@@ -57,27 +62,30 @@
         <div class="infoBox">
             <div class="topBox">Abstand</div>
             <div class="bottomBox">
-                <input id="signSpacing" type="number"/>
+                <input id="signSpacing" type="number" min="1" max="50"/>
             </div>
         </div>
     </div>
 
     <!-- Decken steuerung -->
     
-    <div class="topBox headline">Decken Steuerung</div>
+    <div id="ceilingState" class="topBox headline">Decken Steuerung</div>
     <div class="outterBox">
         <div class="infoBox">
             <div class="topBox">Status</div>
             <div id="onOffBox" class="bottomBox">
-                <button class="glow-on-hover centerObject"> On </button>
-                <button class="glow-on-hover centerObject"> Off </button>
+                <button id="ceilingOn" class="glow-on-hover centerObject"> On </button>
+                <button id="ceilingOff" class="glow-on-hover centerObject"> Off </button>
+                <button id="ceilingSend" class="glow-on-hover centerObject"> Send </button>
             </div>
         </div>
     
         <div class="infoBox">
-            <div class="topBox">Anzeigetext</div>
+            <div class="topBox">Animation</div>
             <div class="bottomBox">
-                <input type="text" placeholder="Type text..."/>
+                <select id="ceilingAnimation">
+
+                </select>
             </div>
         </div>
     </div>

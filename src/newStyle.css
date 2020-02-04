@@ -33,7 +33,7 @@ body{
 
 #onOffBox{
     display: grid;
-    grid-template-rows: 100px 100px;
+    grid-template-rows: 66px 66px 66px;
     grid-template-columns: auto;
 }
 
@@ -44,4 +44,43 @@ body{
 .headline{
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+#signText{
+    width: 180px;
+    margin: 10px;
+}
+
+#ceilingText{
+    width: 180px;
+    margin: 10px;
+}
+
+#signSpeed{
+    width: 180px;
+    margin: 10px;
+}
+
+#signColor{
+    width: 180px;
+    margin: 10px;
+    height: 50px;
+}
+
+#signAnimation{
+    width: 180px;
+    margin: 10px;
+    height: 30px;
+}
+
+#ceilingAnimation{
+    width: 180px;
+    margin: 10px;
+    height: 30px;
+}
+
+#signSpacing{
+    width: 180px;
+    margin: 10px;
+    height: 30px;
 }
