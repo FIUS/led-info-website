@@ -1,103 +1,67 @@
 <html>
 
 <head>
-    <!--<meta charset="UTF-8">-->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="stylesheet" type="text/css" href="toast.css" />
+    <link rel="stylesheet" type="text/css" href="newStyle.css" />
+    <link rel="stylesheet" type="text/css" href="button.css" />
+    <link rel="stylesheet" type="text/css" href="emergencyButton.css" />
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
 </head>
 
+<!-- Changed: background-color: #ffe300; -->
+<!-- Unchanged: background-color: #4fc400; -->
+
 <body>
-    <div class="headline">
-        <h1>led-info</h1>
-    </div>
-    <div id="boxContainer">
-
-        <div class="boxes">
-            <h4>Status</h4>
-            </br>
-            <input type="button" value="Off" onclick="off('sign')" id="off" /> <input type="button" value="On" onclick="on('sign')"
-                id="on" />
-        </div>
-        <div class="boxes">
-            <h4>Anzeigetext</h4>
-            </br>
-            <input type="text" placeholder="Text to display" id="textInput" />
-            </br>
-            <input type="button" class="subButton" value="Apply" onclick="text('sign')" />
-        </div>
-
-        <div class="boxes">
-            <h4>Geschwindigkeit</h4>
-            </br>
-            <input max="40" min="15" type="range" id="speedInput" />
-            </br>
-            <input type="button" value="Apply" class="subButton" onclick="speed('sign')" />
-        </div>
-        <div class="boxes">
-            <h4>Farbe</h4>
-            </br>
-            <input type="color" id="colorInput" />
-            </br>
-            <input type="button" class="subButton" value="Apply" onclick="color('sign')" />
-        </div>
-        <div class="boxes">
-            <h4>Animation</h4>
-            </br>
-            <select id="selectorsign">
-                <option value="0">Normal</option>
-                <option value="1">Rainbow</option>
-            </select>
-            </br>
-            <input type="button" class="subButton" value="Apply" onclick="animation('sign')" />
-        </div>
-        <div class="boxes">
-            <h4>Abstand zwischen Text</h4>
-            </br>
-            <input type="number" id="emptyTicks" min="1" max="50" value="40">
-            </br>
-            <input type="button" class="subButton" value="Apply" onclick="emptyTicks('sign')" />
-        </div>
-
-    </div>
-    <div class="headline">
-        <h1>Chroma</h1>
-    </div>
-    <div id="boxContainer">
-
-            
-            <div class="boxes">
-                <h4>Farbe</h4>
-                </br>
-                <input type="color" id="colorInput" />
-                </br>
-                <input type="button" class="subButton" value="Apply" onclick="color('ceiling')" />
+    <div class="outterBox">
+        <div class="infoBox">
+            <div class="topBox">Status</div>
+            <div class="bottomBox">
+                <a href="#" class="animated-button1"> On </a>
+                <button class="glow-on-hover"> Off </button>
             </div>
-            <div class="boxes">
-                <h4>Animation</h4>
-                </br>
-                <select id="selectorceiling">
-                    <option value="0">Off</option>
-                    <option value="1">Color</option>
-                    <option value="2">Meteor</option>
-                    <option value="3">Rainbow</option>
-                    <option value="4">Smooth Light</option>
-                    <option value="5">Christmas</option>
-                    <option value="6">Sparks</option>
-                    <option value="7">Rainbow Trail</option>
-                    <option value="8">Spark Trail</option>
-                    <option value="9">Ambient</option>
-                </select>
-                </br>
-                <input type="button" class="subButton" value="Apply" onclick="animation('ceiling')" />
-            </div>
+        </div>
     
+        <div class="infoBox">
+            <div class="topBox">Anzeigetext</div>
+            <div class="bottomBox">
+                <input type="text" placeholder="Type text..."/>
+            </div>
         </div>
 
+        <div class="infoBox">
+            <div class="topBox">Geschwindigkeit</div>
+            <div class="bottomBox">
+                <input type="range"/>
+            </div>
+        </div>
 
+        <div class="infoBox">
+            <div class="topBox">Farbe</div>
+            <div class="bottomBox">
+                <input type="color"/>
+            </div>
+        </div>
 
-    <div id="snackbar">Platzhalter für toasts</div>
+        <div class="infoBox">
+            <div class="topBox">Animation</div>
+            <div class="bottomBox">
+                <select >
 
+                </select>
+            </div>
+        </div>
+
+        <div class="infoBox">
+            <div class="topBox">Abstand</div>
+            <div class="bottomBox">
+                <input type="number"/>
+            </div>
+        </div>
+    </div>
+    
     <script src="toast.js"></script>
     <script src="buttons.js"></script>
 </body>

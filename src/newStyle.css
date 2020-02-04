@@ -1,0 +1,31 @@
+.infoBox{
+    display: grid;
+    width: 200px;
+    grid-template-rows: auto 200px;
+    grid-template-columns: 200px;
+    box-shadow: 3px 3px 3px RGBA(0.1,0.1,0.1,0.3);
+    margin-right: 10px;
+}
+
+.topBox{
+    background-color:#4fc400;
+    color: white;
+    text-align: center;
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.bottomBox{   
+    background-color:RGB(240, 240, 240);
+    
+}
+
+body{
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.outterBox{
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
